@@ -74,17 +74,15 @@
         .gift-btn { font-size: 11px; font-weight: 900; padding: 4px 8px; border-radius: 6px; color: #fff; }
 
         .boy-btn-1 { background: #0080ff; }
-        .boy-btn-5 { background: #00d4ff; color: #000; }
         .girl-btn-1 { background: #ff007f; }
-        .girl-btn-5 { background: #ff66cc; color: #000; }
 
         .gift-popup {
-            position: absolute; font-weight: 900; font-size: 20px; pointer-events: none;
+            position: absolute; font-weight: 900; font-size: 18px; pointer-events: none;
             animation: popupAnim 0.8s ease-out forwards; z-index: 100; text-shadow: 0 0 10px rgba(0,0,0,0.8);
         }
         @keyframes popupAnim {
             0% { opacity: 1; transform: translateY(0) scale(0.8); }
-            50% { transform: translateY(-30px) scale(1.2); }
+            50% { transform: translateY(-30px) scale(1.1); }
             100% { opacity: 0; transform: translateY(-60px) scale(1); }
         }
 
@@ -141,26 +139,26 @@
 
         <!-- Кнопки Подарков -->
         <div class="gifts-panel">
-            <div class="gifts-title">🎁 ПОДАРКИ (1 И 5 МОНЕТ)</div>
+            <div class="gifts-title">🎁 ПОДАРКИ ЗРИТЕЛЕЙ (1 МОНЕТА)</div>
             <div class="gifts-grid">
                 <!-- Мальчики -->
                 <div class="gift-box" onclick="addForce(-3, '👦 +1 Роза 🌹', '#00d4ff')">
                     <div class="gift-info"><span class="gift-icon">🌹</span><span class="gift-name">Роза</span></div>
                     <span class="gift-btn boy-btn-1">1 🪙</span>
                 </div>
-                <div class="gift-box" onclick="addForce(-15, '👦 +5 Гантель 🏋️‍♂️', '#00d4ff')">
-                    <div class="gift-info"><span class="gift-icon">🏋️‍♂️</span><span class="gift-name">Гантель</span></div>
-                    <span class="gift-btn boy-btn-5">5 🪙</span>
+                <div class="gift-box" onclick="addForce(-3, '👦 +1 GG 🎮', '#00d4ff')">
+                    <div class="gift-info"><span class="gift-icon">🎮</span><span class="gift-name">GG</span></div>
+                    <span class="gift-btn boy-btn-1">1 🪙</span>
                 </div>
 
                 <!-- Девочки -->
-                <div class="gift-box" onclick="addForce(3, '👧 +1 Сердце 💖', '#ff007f')">
-                    <div class="gift-info"><span class="gift-icon">💖</span><span class="gift-name">Сердечко</span></div>
+                <div class="gift-box" onclick="addForce(3, '👧 +1 Футбол ⚽', '#ff007f')">
+                    <div class="gift-info"><span class="gift-icon">⚽</span><span class="gift-name">Футбол</span></div>
                     <span class="gift-btn girl-btn-1">1 🪙</span>
                 </div>
-                <div class="gift-box" onclick="addForce(15, '👧 +5 Помада 💄', '#ff007f')">
-                    <div class="gift-info"><span class="gift-icon">💄</span><span class="gift-name">Помада</span></div>
-                    <span class="gift-btn girl-btn-5">5 🪙</span>
+                <div class="gift-box" onclick="addForce(3, '👧 +1 Мороженое 🍦', '#ff007f')">
+                    <div class="gift-info"><span class="gift-icon">🍦</span><span class="gift-name">Мороженое</span></div>
+                    <span class="gift-btn girl-btn-1">1 🪙</span>
                 </div>
             </div>
         </div>
@@ -198,7 +196,7 @@
             popup.className = 'gift-popup';
             popup.innerText = text;
             popup.style.color = color;
-            popup.style.left = `${Math.random() * 100 + 130}px`;
+            popup.style.left = `${Math.random() * 80 + 100}px`;
             popup.style.top = `380px`;
             container.appendChild(popup);
             setTimeout(() => popup.remove(), 800);
@@ -249,9 +247,9 @@
 
         gameLoop();
 
-        // WebSocket для связки с Node.js
+        // WebSocket для приёма событий из Node.js (server.js)
         const ws = new WebSocket('ws://localhost:8080');
-        ws.onopen = () => console.log('✅ Подключено к TikTok бэкенду!');
+        ws.onopen = () => console.log('✅ Игровой веб-клиент подключен к Node.js');
         ws.onmessage = (event) => {
             const data = JSON.parse(event.data);
             if (data.type === 'gift') {
