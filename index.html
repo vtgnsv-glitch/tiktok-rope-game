@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ДЕВОЧКИ 🌹 vs 🎮 МАЛЬЧИКИ - TikTok Live</title>
+    <title>👧 ДЕВОЧКИ vs МАЛЬЧИКИ 👦 - TikTok Live</title>
     <style>
         * { box-sizing: border-box; user-select: none; }
         body {
@@ -36,7 +36,7 @@
         }
         .girls-card { border-color: #ff007f; box-shadow: 0 0 15px rgba(255, 0, 128, 0.2); }
         .boys-card { border-color: #00d4ff; box-shadow: 0 0 15px rgba(0, 212, 255, 0.2); }
-        .team-name { font-size: 13px; font-weight: 800; margin-bottom: 4px; }
+        .team-name { font-size: 13px; font-weight: 800; margin-bottom: 4px; display: flex; align-items: center; justify-content: center; gap: 5px; }
         .girls-card .team-name { color: #ff007f; }
         .boys-card .team-name { color: #00d4ff; }
         .score-num { font-size: 38px; font-weight: 900; line-height: 1; color: #ffffff; text-shadow: 0 0 12px rgba(255, 255, 255, 0.8); }
@@ -69,6 +69,7 @@
         }
         .gift-info { display: flex; align-items: center; gap: 8px; }
         .gift-icon { font-size: 26px; }
+        .gift-img { width: 28px; height: 28px; object-fit: contain; }
         .gift-name { color: #fff; font-size: 13px; font-weight: 800; }
         .gift-btn { font-size: 12px; font-weight: 900; padding: 5px 10px; border-radius: 8px; color: #fff; }
 
@@ -117,7 +118,10 @@
                 <div class="score-num" id="score-girls">0</div>
             </div>
             <div class="team-score-card boys-card">
-                <div class="team-name">👦 МАЛЬЧИКИ (🎮)</div>
+                <div class="team-name">
+                    <span>👦 МАЛЬЧИКИ</span>
+                    <img src="gg.png" style="width: 18px; height: 18px; object-fit: contain;">
+                </div>
                 <div class="score-num" id="score-boys">0</div>
             </div>
         </div>
@@ -131,12 +135,13 @@
             </div>
         </div>
 
+        <!-- Оставили Человечков -->
         <div class="fighters">
             <div class="fighter" id="girl-fighter">👩</div>
             <div class="fighter" id="boy-fighter">👨</div>
         </div>
 
-        <!-- Кнопки Подарков -->
+        <!-- Кнопки Подарков с картинкой GG -->
         <div class="gifts-panel">
             <div class="gifts-title">🎁 ГОЛОСУЙ ПОДАРКАМИ (1 МОНЕТА)</div>
             <div class="gifts-grid">
@@ -144,8 +149,11 @@
                     <div class="gift-info"><span class="gift-icon">🌹</span><span class="gift-name">Роза</span></div>
                     <span class="gift-btn girl-btn">1 🪙</span>
                 </div>
-                <div class="gift-box" onclick="addForce(3, '👦 +1 GG 🎮', '#00d4ff')">
-                    <div class="gift-info"><span class="gift-icon">🎮</span><span class="gift-name">GG</span></div>
+                <div class="gift-box" onclick="addForce(3, '👦 +1 GG', '#00d4ff')">
+                    <div class="gift-info">
+                        <img src="gg.png" class="gift-img" alt="GG">
+                        <span class="gift-name">GG</span>
+                    </div>
                     <span class="gift-btn boy-btn">1 🪙</span>
                 </div>
             </div>
