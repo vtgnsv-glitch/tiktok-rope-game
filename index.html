@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>РОЗА vs GG - Перетягивание Каната TikTok Live</title>
+    <title>ДЕВОЧКИ 🌹 vs 🎮 МАЛЬЧИКИ - TikTok Live</title>
     <style>
         * { box-sizing: border-box; user-select: none; }
         body {
@@ -26,7 +26,7 @@
             box-shadow: 0 0 15px rgba(255, 0, 128, 0.5); animation: shine 3s linear infinite;
         }
         @keyframes shine { to { background-position: 200% center; } }
-        .match-title { color: #ffffff; font-size: 28px; font-weight: 900; margin-top: 8px; text-shadow: 0 0 10px rgba(255,255,255,0.5); }
+        .match-title { color: #ffffff; font-size: 24px; font-weight: 900; margin-top: 8px; text-shadow: 0 0 10px rgba(255,255,255,0.5); }
         .target-goal { color: #ffd700; font-size: 15px; font-weight: 800; margin-top: 3px; text-shadow: 0 0 8px rgba(255,215,0,0.6); }
 
         .score-board { display: flex; justify-content: space-between; width: 100%; padding: 0 10px; margin-top: 10px; }
@@ -34,11 +34,11 @@
             width: 47%; background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(10px);
             border-radius: 15px; padding: 10px; text-align: center; border: 2px solid rgba(255, 255, 255, 0.1);
         }
-        .rose-card { border-color: #ff007f; box-shadow: 0 0 15px rgba(255, 0, 128, 0.2); }
-        .gg-card { border-color: #00d4ff; box-shadow: 0 0 15px rgba(0, 212, 255, 0.2); }
-        .team-name { font-size: 15px; font-weight: 800; margin-bottom: 4px; }
-        .rose-card .team-name { color: #ff007f; }
-        .gg-card .team-name { color: #00d4ff; }
+        .girls-card { border-color: #ff007f; box-shadow: 0 0 15px rgba(255, 0, 128, 0.2); }
+        .boys-card { border-color: #00d4ff; box-shadow: 0 0 15px rgba(0, 212, 255, 0.2); }
+        .team-name { font-size: 13px; font-weight: 800; margin-bottom: 4px; }
+        .girls-card .team-name { color: #ff007f; }
+        .boys-card .team-name { color: #00d4ff; }
         .score-num { font-size: 38px; font-weight: 900; line-height: 1; color: #ffffff; text-shadow: 0 0 12px rgba(255, 255, 255, 0.8); }
 
         .arena {
@@ -72,8 +72,8 @@
         .gift-name { color: #fff; font-size: 13px; font-weight: 800; }
         .gift-btn { font-size: 12px; font-weight: 900; padding: 5px 10px; border-radius: 8px; color: #fff; }
 
-        .rose-btn { background: #ff007f; }
-        .gg-btn { background: #00d4ff; color: #000; }
+        .girl-btn { background: #ff007f; }
+        .boy-btn { background: #00d4ff; color: #000; }
 
         .gift-popup {
             position: absolute; font-weight: 900; font-size: 18px; pointer-events: none;
@@ -107,18 +107,18 @@
 
         <div class="header">
             <span class="title-badge">🔴 TIKTOK LIVE БИТВА</span>
-            <div class="match-title">РОЗА 🌹 vs GG 🎮</div>
+            <div class="match-title">👧 ДЕВОЧКИ vs МАЛЬЧИКИ 👦</div>
             <div class="target-goal">ИГРА ДО 50 ОЧКОВ 🏆</div>
         </div>
 
         <div class="score-board">
-            <div class="team-score-card rose-card">
-                <div class="team-name">🌹 РОЗА</div>
-                <div class="score-num" id="score-rose">0</div>
+            <div class="team-score-card girls-card">
+                <div class="team-name">👧 ДЕВОЧКИ (🌹)</div>
+                <div class="score-num" id="score-girls">0</div>
             </div>
-            <div class="team-score-card gg-card">
-                <div class="team-name">🎮 GG</div>
-                <div class="score-num" id="score-gg">0</div>
+            <div class="team-score-card boys-card">
+                <div class="team-name">👦 МАЛЬЧИКИ (🎮)</div>
+                <div class="score-num" id="score-boys">0</div>
             </div>
         </div>
 
@@ -132,21 +132,21 @@
         </div>
 
         <div class="fighters">
-            <div class="fighter" id="rose-fighter">🌹</div>
-            <div class="fighter" id="gg-fighter">🎮</div>
+            <div class="fighter" id="girl-fighter">👩</div>
+            <div class="fighter" id="boy-fighter">👨</div>
         </div>
 
         <!-- Кнопки Подарков -->
         <div class="gifts-panel">
             <div class="gifts-title">🎁 ГОЛОСУЙ ПОДАРКАМИ (1 МОНЕТА)</div>
             <div class="gifts-grid">
-                <div class="gift-box" onclick="addForce(-3, '🌹 +1 Роза', '#ff007f')">
+                <div class="gift-box" onclick="addForce(-3, '👧 +1 Роза 🌹', '#ff007f')">
                     <div class="gift-info"><span class="gift-icon">🌹</span><span class="gift-name">Роза</span></div>
-                    <span class="gift-btn rose-btn">1 🪙</span>
+                    <span class="gift-btn girl-btn">1 🪙</span>
                 </div>
-                <div class="gift-box" onclick="addForce(3, '🎮 +1 GG', '#00d4ff')">
+                <div class="gift-box" onclick="addForce(3, '👦 +1 GG 🎮', '#00d4ff')">
                     <div class="gift-info"><span class="gift-icon">🎮</span><span class="gift-name">GG</span></div>
-                    <span class="gift-btn gg-btn">1 🪙</span>
+                    <span class="gift-btn boy-btn">1 🪙</span>
                 </div>
             </div>
         </div>
@@ -157,16 +157,16 @@
     <script>
         let position = 0;
         let targetPosition = 0;
-        let scoreRose = 0;
-        let scoreGG = 0;
+        let scoreGirls = 0;
+        let scoreBoys = 0;
         const targetScore = 50;
         let isGameOver = false;
 
         const ropeContainer = document.getElementById('rope-container');
-        const roseFighter = document.getElementById('rose-fighter');
-        const ggFighter = document.getElementById('gg-fighter');
-        const scoreRoseElem = document.getElementById('score-rose');
-        const scoreGGElem = document.getElementById('score-gg');
+        const girlFighter = document.getElementById('girl-fighter');
+        const boyFighter = document.getElementById('boy-fighter');
+        const scoreGirlsElem = document.getElementById('score-girls');
+        const scoreBoysElem = document.getElementById('score-boys');
         const winOverlay = document.getElementById('win-overlay');
         const winText = document.getElementById('win-text');
         const container = document.getElementById('container');
@@ -196,20 +196,20 @@
                 const shiftPx = (position / 100) * 120;
                 ropeContainer.style.left = `${shiftPx}px`;
 
-                const shakeRose = (Math.random() - 0.5) * (Math.abs(position) / 10 + 2);
-                const shakeGG = (Math.random() - 0.5) * (Math.abs(position) / 10 + 2);
-                roseFighter.style.transform = `translateY(${shakeRose}px)`;
-                ggFighter.style.transform = `translateY(${shakeGG}px)`;
+                const shakeGirl = (Math.random() - 0.5) * (Math.abs(position) / 10 + 2);
+                const shakeBoy = (Math.random() - 0.5) * (Math.abs(position) / 10 + 2);
+                girlFighter.style.transform = `translateY(${shakeGirl}px)`;
+                boyFighter.style.transform = `translateY(${shakeBoy}px)`;
 
                 if (position <= -95) {
-                    scoreRose++;
-                    scoreRoseElem.innerText = scoreRose;
-                    checkOverallWin('🌹 РОЗА');
+                    scoreGirls++;
+                    scoreGirlsElem.innerText = scoreGirls;
+                    checkOverallWin('👧 ДЕВОЧКИ');
                     resetRope();
                 } else if (position >= 95) {
-                    scoreGG++;
-                    scoreGGElem.innerText = scoreGG;
-                    checkOverallWin('🎮 GG');
+                    scoreBoys++;
+                    scoreBoysElem.innerText = scoreBoys;
+                    checkOverallWin('👦 МАЛЬЧИКИ');
                     resetRope();
                 }
             }
@@ -219,17 +219,17 @@
         function resetRope() { position = 0; targetPosition = 0; ropeContainer.style.left = '0px'; }
 
         function checkOverallWin(winnerName) {
-            if (scoreRose >= targetScore || scoreGG >= targetScore) {
+            if (scoreGirls >= targetScore || scoreBoys >= targetScore) {
                 isGameOver = true;
                 winText.innerText = `${winnerName}\nПОБЕДИЛИ! 🎉`;
-                winText.style.color = winnerName.includes('РОЗА') ? '#ff007f' : '#00d4ff';
+                winText.style.color = winnerName.includes('ДЕВОЧКИ') ? '#ff007f' : '#00d4ff';
                 winOverlay.classList.add('active');
             }
         }
 
         function resetGame() {
-            scoreRose = 0; scoreGG = 0;
-            scoreRoseElem.innerText = '0'; scoreGGElem.innerText = '0';
+            scoreGirls = 0; scoreBoys = 0;
+            scoreGirlsElem.innerText = '0'; scoreBoysElem.innerText = '0';
             isGameOver = false; winOverlay.classList.remove('active'); resetRope();
         }
 
