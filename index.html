@@ -603,5 +603,40 @@
         setInterval(autoSimulation, 100);
         gameLoop();
     </script>
+    // ==========================================
+// ПОДКЛЮЧЕНИЕ К NODE.JS СЕРВЕРУ ДЛЯ TIKTOK LIVE
+// ==========================================
+const ws = new WebSocket('ws://localhost:8080');
+
+ws.onopen = () => {
+    console.log('Подключено к Node.js серверу TikTok!');
+};
+
+ws.onmessage = (event) => {
+    const data = JSON.parse(event.data);
+
+    if (data.type === 'gift') {
+        // Проверяем giftName или giftId
+        const giftName = data.giftName.toLowerCase();
+        const repeatCount = data.repeatCount || 1;
+
+        // Если прислали Розу (Rose)
+        if (giftName.includes('rose') || giftName.includes('роза')) {
+            if (data.team === 'boy') {
+                addForce(-3 * repeatCount, `👦 +${repeatCount} Роза 🌹`, '#00d4ff');
+            } else {
+                addForce(3 * repeatCount, `👧 +${repeatCount} Роза 🌹`, '#ff007f');
+            }
+        } 
+        // Если прислали Пончик (Doughnut) или любой дорогой подарок
+        else if (giftName.includes('donut') || giftName.includes('doughnut') || giftName.includes('пончик')) {
+            if (data.team === 'boy') {
+                addForce(-15 * repeatCount, `👦 +${5 * repeatCount} Пончик 🍩`, '#00d4ff');
+            } else {
+                addForce(15 * repeatCount, `👧 +${5 * repeatCount} Пончик 🍩`, '#ff007f');
+            }
+        }
+    }
+};
 </body>
 </html>
